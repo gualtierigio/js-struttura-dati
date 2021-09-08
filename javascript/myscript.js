@@ -54,7 +54,7 @@ let card = {
 
     borderCard : "black",
 
-    cardImg : "..img/tarmogoyf.png"
+    cardImg : "img/tarmogoyf.png"
 }
 
 console.log(card);
@@ -79,12 +79,11 @@ let cardDisplayHTML =
             <li>Year edition: ${card.edition.yearEdition}</li>
             <li>Existent cards: ${card.edition.existentCards}</li>
         </ul>
-    <li>${}</li>
-    <li>${}</li>
-    <li>${}</li>
-    <li>${}</li>
-    <li>${}</li>
-    <li>${}</li>
+    <li>Collection number: ${card.cardOfTheExistentCards}/${card.edition.existentCards}</li>
+    <li>Effects: ${card.flavourText.descriptiopn} - <em>${card.flavourText.author}</em></li>
+    <li>Strength and Costitution: ${card.strength}/${card.costitution}</li>
+    <li>Border color: ${card.borderCard}</li>
+    <img src="${card.cardImg}" alt="whole card img">
 
 </ul>`
 
