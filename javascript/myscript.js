@@ -1,7 +1,7 @@
 
 let card = {
     name : "Tarmogoyf",
-    manaCost = {
+    manaCost : {
         common : 1,
         forest : 1,
         plains : 0,
@@ -9,6 +9,8 @@ let card = {
         swamp : 0,
         mountain : 0,
     },
+
+    combinedManaCost :
 
     function(){
         let sum = 0;
@@ -21,7 +23,7 @@ let card = {
     tipeOfCard : "creature", 
     tipeOfCreature : "lhurgoyf",
 
-    edition = {
+    edition : {
         rarity : "ultra-rare",
         yearEdition : "2017",
         existentCards : 249,
@@ -33,7 +35,7 @@ let card = {
     },
 
     abilities : [
-        {manaCostAbilities = {
+        {manaCostAbilities : {
             common : 0,
             forest : 0,
             plains : 0,
@@ -54,3 +56,36 @@ let card = {
 
     cardImg : "..img/tarmogoyf.png"
 }
+
+console.log(card);
+
+let cardDisplayHTML = 
+`<ul class="card-element">
+
+    <li>Name: ${card.name}</li>
+    <li>Total mana cost: ${card.combinedManaCost()}</li>
+        <ul class"mana-cost">
+            <li>Common mana cost: ${card.manaCost.common}</li>
+            <li>Forest mana cost: ${card.manaCost.forest}</li>
+            <li>Plains mana cost: ${card.manaCost.plains}</li>
+            <li>Swamp mana cost: ${card.manaCost.swamp}</li>
+            <li>Mountain mana cost: ${card.manaCost.mountain}</li>
+            <li>Island mana cost: ${card.manaCost.island}</li>
+        </ul>
+    <li>Card type: ${card.tipeOfCard} ${card.tipeOfCreature}</li>
+    <li>Edition: 
+        <ul class"expansion">
+            <li>Rarity: ${card.edition.rarity}</li>
+            <li>Year edition: ${card.edition.yearEdition}</li>
+            <li>Existent cards: ${card.edition.existentCards}</li>
+        </ul>
+    <li>${}</li>
+    <li>${}</li>
+    <li>${}</li>
+    <li>${}</li>
+    <li>${}</li>
+    <li>${}</li>
+
+</ul>`
+
+document.getElementById('grimorio').innerHTML += cardDisplayHTML
